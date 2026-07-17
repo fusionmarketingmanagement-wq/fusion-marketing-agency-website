@@ -84,11 +84,11 @@ export function AboutPage() {
       <section className="bg-background-soft py-20 md:py-28">
         <div className="container-shell grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
-            <div className="relative mx-auto aspect-square w-full max-w-md">
+            <div className="relative mx-auto aspect-square w-full max-w-[280px] sm:max-w-md">
               <div className="absolute inset-0 rounded-full border border-border/70" />
               <div className="absolute inset-8 rounded-full border border-border-dark" />
-              <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-charcoal text-center text-text-inverse shadow-[var(--shadow-md)]">
-                <span className="font-display text-sm font-semibold leading-tight">
+              <div className="absolute left-1/2 top-1/2 z-10 flex h-24 w-24 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-charcoal text-center text-text-inverse shadow-[var(--shadow-md)] sm:h-28 sm:w-28">
+                <span className="font-display text-xs font-semibold leading-tight sm:text-sm">
                   Growth
                   <br />
                   Engine
@@ -102,7 +102,7 @@ export function AboutPage() {
                 return (
                   <div
                     key={pillar}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-border bg-surface px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground shadow-[var(--shadow-md)]"
+                    className="absolute max-w-[88px] -translate-x-1/2 -translate-y-1/2 truncate rounded-full border border-border bg-surface px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-muted-foreground shadow-[var(--shadow-md)] sm:max-w-none sm:px-3 sm:py-2 sm:text-[10px] sm:tracking-[0.14em]"
                     style={{ left: `${x}%`, top: `${y}%` }}
                   >
                     {pillar}

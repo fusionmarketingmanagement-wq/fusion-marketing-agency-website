@@ -189,8 +189,14 @@ img {
 }
 
 .container-shell {
-  width: min(100% - 2rem, 1320px);
+  width: min(100% - 1.5rem, 1320px);
   margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .container-shell {
+    width: min(100% - 2rem, 1320px);
+  }
 }
 
 .grain {

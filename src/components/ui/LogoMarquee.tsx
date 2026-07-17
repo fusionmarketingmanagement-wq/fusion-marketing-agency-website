@@ -51,7 +51,7 @@ function LogoCard({
   gradient: { from: string; to: string }
 }) {
   return (
-    <div className="group relative flex h-24 w-40 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-surface shadow-[var(--shadow-sm)] transition-all hover:border-border-strong hover:shadow-[var(--shadow-md)]">
+    <div className="group relative flex h-16 w-28 shrink-0 items-center justify-center overflow-hidden rounded-full border border-border bg-surface shadow-[var(--shadow-sm)] transition-all hover:border-border-strong hover:shadow-[var(--shadow-md)] sm:h-20 sm:w-36 md:h-24 md:w-40">
       <div
         className="absolute inset-0 scale-150 opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100"
         style={{
@@ -65,7 +65,7 @@ function LogoCard({
         width={48}
         height={48}
         loading="lazy"
-        className="relative z-10 h-10 w-10 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert"
+        className="relative z-10 h-7 w-7 object-contain transition-all duration-300 group-hover:brightness-0 group-hover:invert sm:h-9 sm:w-9 md:h-10 md:w-10"
       />
     </div>
   )

@@ -31,15 +31,15 @@ export function Testimonials({ items = defaultTestimonials, className }: Testimo
   if (!items.length) return null
 
   return (
-    <div className={cn("flex flex-col items-center gap-10 py-8", className)}>
-      <div className="relative px-8">
-        <span className="pointer-events-none absolute -left-2 -top-6 select-none text-7xl font-serif text-foreground/[0.06]">
+    <div className={cn("flex flex-col items-center gap-8 py-6 sm:gap-10 sm:py-8", className)}>
+      <div className="relative px-4 sm:px-8">
+        <span className="pointer-events-none absolute -left-1 -top-4 select-none text-5xl font-serif text-foreground/[0.06] sm:-left-2 sm:-top-6 sm:text-7xl">
           &ldquo;
         </span>
 
         <p
           className={cn(
-            "max-w-lg text-center text-2xl font-light leading-relaxed text-foreground transition-all duration-400 ease-out md:text-3xl",
+            "max-w-lg text-center text-xl font-light leading-relaxed text-foreground transition-all duration-400 ease-out sm:text-2xl md:text-3xl",
             isAnimating ? "scale-[0.98] opacity-0 blur-sm" : "scale-100 opacity-100 blur-0",
           )}
         >
