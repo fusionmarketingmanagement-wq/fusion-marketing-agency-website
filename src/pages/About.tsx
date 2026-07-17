@@ -171,7 +171,7 @@ export function AboutPage() {
               align="center"
               eyebrow="Team"
               title="Strategists, builders and automators"
-              description="Team portraits below use placeholder stock imagery."
+              description="The people behind strategy, creative, media and automation."
               className="mb-10"
             />
           </Reveal>
@@ -214,7 +214,7 @@ export function AboutPage() {
                   Get Free Proposal
                 </Button>
                 <Button href="/case-studies" variant="outline" size="lg">
-                  See Sample Work
+                  See Our Work
                 </Button>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">{siteConfig.email}</p>

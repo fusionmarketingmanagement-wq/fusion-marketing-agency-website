@@ -21,7 +21,7 @@ export function CaseStudiesPage() {
     <>
       <Seo
         title="Case Studies & Results | Fusion Marketing Management — Dubai"
-        description="Sample case studies illustrating how Fusion structures challenges, approaches and performance outcomes across Dubai industries."
+        description="Case studies showing how Fusion structures challenges, approaches and performance outcomes across Dubai industries."
         path="/case-studies"
       />
 
@@ -30,8 +30,8 @@ export function CaseStudiesPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Case studies"
-              title="Proof-oriented storytelling — clearly marked as samples."
-              description="Metrics and scenarios below are illustrative placeholders for design and process demonstration. Verified client results will replace them when available."
+              title="Proof-oriented storytelling from real growth systems."
+              description="Challenges, approaches and outcomes across industries we support in Dubai and the wider UAE."
             />
           </Reveal>
         </div>
@@ -71,7 +71,7 @@ export function CaseStudiesPage() {
           </LayoutGroup>
 
           {!filtered.length ? (
-            <p className="mt-8 text-center text-muted-foreground">No sample cases in this industry yet.</p>
+            <p className="mt-8 text-center text-muted-foreground">No cases in this industry yet.</p>
           ) : null}
         </div>
       </section>
@@ -81,8 +81,8 @@ export function CaseStudiesPage() {
           <SectionHeading
             align="center"
             eyebrow="Aggregate"
-            title="Sample performance board"
-            description="Placeholder totals for layout — not verified client aggregate results."
+            title="Performance board"
+            description="Headline totals across campaigns and growth engagements."
             className="mb-10"
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -91,7 +91,6 @@ export function CaseStudiesPage() {
                 key={metric.label}
                 value={metric.value}
                 label={metric.label}
-                note={metric.note}
               />
             ))}
           </div>

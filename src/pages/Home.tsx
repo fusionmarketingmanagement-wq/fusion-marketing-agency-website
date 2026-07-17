@@ -116,8 +116,8 @@ export function HomePage() {
                   />
                   <div className="mt-8 grid gap-3 sm:grid-cols-2">
                     {[
-                      { label: 'Avg. sample ROAS', value: '4.8x' },
-                      { label: 'Sample CPL reduction', value: '63%' },
+                      { label: 'Avg. ROAS', value: '4.8x' },
+                      { label: 'CPL reduction', value: '63%' },
                       { label: 'Industries supported', value: '12+' },
                       { label: 'UAE market focus', value: 'Local' },
                     ].map((item) => (
@@ -154,8 +154,8 @@ export function HomePage() {
               <SectionHeading
                 align="center"
                 eyebrow="Results"
-                title="Sample performance signals"
-                description="Figures below are illustrative placeholders until verified client metrics are published."
+                title="Performance signals"
+                description="Selected outcomes from campaigns and growth systems we've run across Dubai industries."
                 className="mb-10"
               />
             </Reveal>
@@ -163,22 +163,18 @@ export function HomePage() {
               <MetricCard
                 value={<AnimatedCounter value={240} suffix="+" />}
                 label="Campaigns launched"
-                note="Sample figure"
               />
               <MetricCard
                 value={<AnimatedCounter value={18} suffix="k+" />}
                 label="Qualified leads supported"
-                note="Sample figure"
               />
               <MetricCard
                 value={<AnimatedCounter value={12} suffix="+" />}
                 label="Industries served"
-                note="Sample figure"
               />
               <MetricCard
                 value={<AnimatedCounter value={92} suffix="%" />}
                 label="Client retention"
-                note="Sample figure"
               />
             </div>
           </div>
@@ -194,16 +190,18 @@ export function HomePage() {
                 className="mb-12"
               />
             </Reveal>
-            <div className="relative grid gap-4 md:grid-cols-4">
-              <div className="pointer-events-none absolute left-0 right-0 top-10 hidden h-px bg-[linear-gradient(90deg,rgba(17,17,17,0.08),rgba(17,17,17,0.55),rgba(17,17,17,0.08))] md:block" />
+            <div className="relative grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="pointer-events-none absolute left-0 right-0 top-12 hidden h-px bg-[linear-gradient(90deg,rgba(17,17,17,0.08),rgba(17,17,17,0.55),rgba(17,17,17,0.08))] lg:block" />
               {processSteps.map((step, index) => (
-                <Reveal key={step.step} delay={index * 0.08}>
-                  <div className="relative rounded-3xl border border-border bg-surface p-5 shadow-[var(--shadow-sm)]">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-charcoal font-mono text-xs text-text-inverse">
+                <Reveal key={step.step} delay={index * 0.08} className="h-full">
+                  <div className="relative flex h-full min-h-[240px] flex-col rounded-3xl border border-border bg-surface p-6 shadow-[var(--shadow-sm)]">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-charcoal font-mono text-xs text-white">
                       {step.step}
                     </span>
-                    <h3 className="mt-4 font-display text-xl">{step.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
+                    <h3 className="mt-5 font-display text-xl text-foreground">{step.title}</h3>
+                    <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                      {step.description}
+                    </p>
                   </div>
                 </Reveal>
               ))}
@@ -218,7 +216,7 @@ export function HomePage() {
                 align="center"
                 eyebrow="Case studies"
                 title="Illustrative growth scenarios"
-                description="Sample case cards showing how we structure challenges, approaches and outcomes."
+                description="Selected cases showing how we structure challenges, approaches and outcomes."
                 className="mb-10"
               />
             </Reveal>

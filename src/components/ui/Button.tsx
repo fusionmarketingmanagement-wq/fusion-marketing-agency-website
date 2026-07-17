@@ -9,12 +9,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         primary:
-          'border border-charcoal bg-charcoal text-text-inverse shadow-[0_8px_22px_rgba(17,17,17,0.18)] hover:-translate-y-0.5 hover:border-charcoal-hover hover:bg-charcoal-hover hover:shadow-[0_12px_28px_rgba(17,17,17,0.23)] active:translate-y-0 active:shadow-[0_5px_14px_rgba(17,17,17,0.16)]',
+          'border border-charcoal bg-charcoal text-white shadow-[0_8px_22px_rgba(17,17,17,0.18)] hover:-translate-y-0.5 hover:border-charcoal-hover hover:bg-charcoal-hover hover:text-white hover:shadow-[0_12px_28px_rgba(17,17,17,0.23)] active:translate-y-0 active:shadow-[0_5px_14px_rgba(17,17,17,0.16)]',
         secondary:
-          'border border-border-strong bg-surface text-ink shadow-[var(--shadow-sm)] hover:border-[rgba(17,17,17,0.25)] hover:bg-accent-soft',
+          'border border-border-strong bg-surface text-ink shadow-[var(--shadow-sm)] hover:border-[rgba(17,17,17,0.25)] hover:bg-accent-soft hover:text-ink',
         ghost: 'text-foreground hover:bg-accent-soft',
         outline:
-          'border border-border-strong bg-surface text-ink shadow-[var(--shadow-sm)] hover:border-[rgba(17,17,17,0.25)] hover:bg-accent-soft',
+          'border border-border-strong bg-surface text-ink shadow-[var(--shadow-sm)] hover:border-[rgba(17,17,17,0.25)] hover:bg-accent-soft hover:text-ink',
       },
       size: {
         sm: 'h-10 px-4 text-sm',

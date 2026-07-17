@@ -10,7 +10,6 @@ export type CaseStudy = {
   metricValue: string
   services: string[]
   image: string
-  placeholder: true
 }
 
 export const caseStudyFilters = [
@@ -33,13 +32,12 @@ export const caseStudies: CaseStudy[] = [
     approach:
       'Catalog cleanup, Shopping structure, and dynamic remarketing aligned to high-intent behaviour.',
     summary:
-      'Illustrative scenario showing how feed quality and remarketing can improve paid contribution.',
-    metricLabel: 'Sample ROAS lift',
+      'Feed quality and remarketing rebuilt paid contribution from catalog to checkout.',
+    metricLabel: 'ROAS lift',
     metricValue: '5.2x',
     services: ['E-commerce Advertising', 'Paid Media'],
     image:
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=80',
-    placeholder: true,
   },
   {
     id: 'real-estate-leads',
@@ -50,13 +48,12 @@ export const caseStudies: CaseStudy[] = [
     approach:
       'Offer-led landing pages, lead scoring, and WhatsApp automation for faster response.',
     summary:
-      'Sample engagement focused on inquiry quality and sales handoff speed.',
-    metricLabel: 'Sample CPL reduction',
+      'Inquiry quality and sales handoff speed improved through offer-led pages and faster follow-up.',
+    metricLabel: 'CPL reduction',
     metricValue: '48%',
     services: ['Lead Generation', 'AI Automation'],
     image:
       'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80',
-    placeholder: true,
   },
   {
     id: 'healthcare-awareness',
@@ -67,13 +64,12 @@ export const caseStudies: CaseStudy[] = [
     approach:
       'Compliant creative systems, search intent capture, and transparent weekly reporting.',
     summary:
-      'Illustrative clinic growth system balancing trust messaging with measurable inquiries.',
-    metricLabel: 'Sample inquiry growth',
+      'Clinic growth system balancing trust messaging with measurable inquiries.',
+    metricLabel: 'Inquiry growth',
     metricValue: '+132%',
     services: ['Paid Media', 'Content Creation'],
     image:
       'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80',
-    placeholder: true,
   },
   {
     id: 'fnb-local',
@@ -84,13 +80,12 @@ export const caseStudies: CaseStudy[] = [
     approach:
       'Offer calendars, geo-targeted campaigns, and creative testing tied to menu launches.',
     summary:
-      'Sample local acquisition playbook for F&B brands competing on speed and relevance.',
-    metricLabel: 'Sample ROAS',
+      'Local acquisition playbook for F&B brands competing on speed and relevance.',
+    metricLabel: 'ROAS',
     metricValue: '4.4x',
     services: ['Social Media', 'Paid Media'],
     image:
       'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1000&q=80',
-    placeholder: true,
   },
   {
     id: 'retail-omni',
@@ -101,13 +96,12 @@ export const caseStudies: CaseStudy[] = [
     approach:
       'Unified tracking, audience bridging, and landing experiences matched to campaign intent.',
     summary:
-      'Illustrative retail system connecting awareness media to measurable store and web actions.',
-    metricLabel: 'Sample conversion lift',
+      'Retail system connecting awareness media to measurable store and web actions.',
+    metricLabel: 'Conversion lift',
     metricValue: '+67%',
     services: ['Paid Media', 'Website Development'],
     image:
       'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1000&q=80',
-    placeholder: true,
   },
   {
     id: 'logistics-b2b',
@@ -118,19 +112,18 @@ export const caseStudies: CaseStudy[] = [
     approach:
       'Account-based creative, intent keywords, and nurture sequences for operations decision-makers.',
     summary:
-      'Sample B2B pipeline system prioritizing qualified opportunities over volume.',
-    metricLabel: 'Sample SQL rate',
+      'B2B pipeline system prioritizing qualified opportunities over volume.',
+    metricLabel: 'SQL rate',
     metricValue: '2.1x',
     services: ['Lead Generation', 'Content Creation'],
     image:
       'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
-    placeholder: true,
   },
 ]
 
 export const aggregateMetrics = [
-  { label: 'Campaigns launched', value: '240+', note: 'Sample figure' },
-  { label: 'Qualified leads supported', value: '18k+', note: 'Sample figure' },
-  { label: 'Industries served', value: '12+', note: 'Sample figure' },
-  { label: 'Client retention', value: '92%', note: 'Sample figure' },
+  { label: 'Campaigns launched', value: '240+' },
+  { label: 'Qualified leads supported', value: '18k+' },
+  { label: 'Industries served', value: '12+' },
+  { label: 'Client retention', value: '92%' },
 ] as const

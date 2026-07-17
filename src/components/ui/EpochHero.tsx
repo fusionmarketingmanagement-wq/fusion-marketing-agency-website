@@ -1,7 +1,8 @@
 import { ChevronRight } from 'lucide-react'
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { Link, useNavigate } from 'react-router-dom'
 import { LogoMarquee } from '@/components/ui/LogoMarquee'
+import { siteConfig } from '@/data/site'
 
 const VIDEO_SRC =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260505_101331_74f9b798-3f00-4e86-8a01-377aa16ffeaa.mp4'
@@ -44,7 +45,7 @@ export function EpochHero() {
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => navigate('/contact')}
-              className="mt-8 rounded-full border border-charcoal bg-charcoal px-6 py-3 text-sm font-semibold text-text-inverse shadow-[0_8px_22px_rgba(17,17,17,0.18)]"
+              className="mt-8 rounded-full border border-charcoal bg-charcoal px-6 py-3 text-sm font-semibold text-white shadow-[0_8px_22px_rgba(17,17,17,0.18)] hover:text-white"
             >
               Contact Us
             </motion.button>
@@ -59,9 +60,13 @@ export function EpochHero() {
             className="flex items-center rounded-full border border-border bg-surface-elevated px-1.5 py-1.5 shadow-[var(--shadow-md)] backdrop-blur-2xl"
             aria-label="Hero navigation"
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-surface text-sm text-foreground shadow-[var(--shadow-sm)]">
-              ✦
-            </div>
+            <Link
+              to="/"
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-border bg-charcoal font-display text-sm font-semibold text-white shadow-[var(--shadow-sm)]"
+              aria-label={`${siteConfig.name} home`}
+            >
+              F
+            </Link>
             <button
               type="button"
               className="px-4 py-2 text-[12px] font-semibold text-text-muted transition-colors hover:text-foreground"

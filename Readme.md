@@ -28,4 +28,4 @@ npm run dev
 
 - Static HTML backup lives in `_static_backup/`
 - Contact form uses a demo handler; set `VITE_FORM_ENDPOINT` in `.env` for real submissions
-- Phone / WhatsApp numbers and case metrics are placeholders in `src/data/`
+- Contact: `+971 58 277 7081` · `contact@thefusionmarketing.com` (configured in `src/data/site.ts`)

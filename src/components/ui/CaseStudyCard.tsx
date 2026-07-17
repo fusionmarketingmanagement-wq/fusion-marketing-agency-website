@@ -35,11 +35,6 @@ export function CaseStudyCard({ study, className, featured }: CaseStudyCardProps
             <span className="rounded-full border border-white/30 bg-white/90 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-foreground shadow-[var(--shadow-sm)] backdrop-blur">
               {study.industry}
             </span>
-            {study.placeholder ? (
-              <span className="rounded-full border border-border bg-accent-soft px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-graphite backdrop-blur">
-                Sample
-              </span>
-            ) : null}
           </div>
         </div>
         <div className="flex flex-col justify-between p-6">

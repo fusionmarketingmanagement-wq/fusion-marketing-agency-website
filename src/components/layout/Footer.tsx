@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Facebook, Instagram } from 'lucide-react'
 import { navLinks, siteConfig } from '@/data/site'
 import { services } from '@/data/services'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -10,11 +11,8 @@ export function Footer() {
     <footer className="border-t border-border bg-background-soft">
       <div className="container-shell grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
-          <Link to="/" className="inline-flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-charcoal font-display text-sm font-bold text-text-inverse shadow-[var(--shadow-sm)]">
-              F
-            </span>
-            <span className="font-display text-sm font-semibold text-foreground">{siteConfig.name}</span>
+          <Link to="/" className="inline-flex items-center" aria-label={`${siteConfig.name} home`}>
+            <BrandLogo variant="footer" />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Paid media, AI automation, social strategy and high-performance web — fused into measurable growth for Dubai businesses.
@@ -59,9 +57,6 @@ export function Footer() {
               <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-ink">
                 {siteConfig.phone}
               </a>
-              <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">
-                Placeholder
-              </span>
             </li>
             <li>
               {siteConfig.address.line1}

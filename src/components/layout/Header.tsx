@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { navLinks, siteConfig } from '@/data/site'
 import { Button } from '@/components/ui/Button'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 import { cn } from '@/lib/utils'
 
 export function Header() {
@@ -25,30 +26,24 @@ export function Header() {
   }, [open])
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-4">
+    <header className="site-header fixed inset-x-0 top-0 z-50 h-[76px] min-h-[76px] px-3 pt-3 md:px-4">
       <div
         className={cn(
-          'container-shell flex h-16 items-center justify-between rounded-2xl border border-transparent px-4 transition-all duration-300 md:h-[68px] md:px-5',
+          'header-inner container-shell flex h-[52px] min-h-[52px] items-center justify-between gap-4 rounded-2xl border border-transparent px-4 transition-all duration-300 md:h-[56px] md:min-h-[56px] md:px-5',
           scrolled || open
             ? 'border-border bg-surface-elevated shadow-[var(--shadow-md)] backdrop-blur-xl'
             : 'bg-transparent',
         )}
       >
-        <Link to="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-charcoal font-display text-sm font-bold text-text-inverse shadow-[var(--shadow-sm)]">
-            F
-          </span>
-          <span className="hidden leading-tight sm:block">
-            <span className="block font-display text-sm font-semibold text-foreground">
-              Fusion Marketing
-            </span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-text-muted">
-              Management · Dubai
-            </span>
-          </span>
+        <Link
+          to="/"
+          className="header-logo relative z-10 flex shrink-0 items-center"
+          aria-label={`${siteConfig.name} home`}
+        >
+          <BrandLogo variant="header" />
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <NavLink
               key={link.href}
@@ -65,7 +60,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden shrink-0 items-center gap-3 md:flex">
           <Button href="/contact" size="sm">
             Get Free Proposal
           </Button>
@@ -73,7 +68,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-[var(--shadow-sm)] lg:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-[var(--shadow-sm)] lg:hidden"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}

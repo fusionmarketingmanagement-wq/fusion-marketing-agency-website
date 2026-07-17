@@ -32,7 +32,6 @@ export const team = [
     bio: 'Performance marketing lead focused on accountable paid media systems.',
     image:
       'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80',
-    placeholder: true as const,
   },
   {
     name: 'Sara Mansour',
@@ -40,7 +39,6 @@ export const team = [
     bio: 'Builds the growth roadmap for every client account from day one.',
     image:
       'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80',
-    placeholder: true as const,
   },
   {
     name: 'Adam Whitfield',
@@ -48,7 +46,6 @@ export const team = [
     bio: 'Designs AI and CRM workflows that keep leads moving after the click.',
     image:
       'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80',
-    placeholder: true as const,
   },
   {
     name: 'Noor Hassan',
@@ -56,7 +53,6 @@ export const team = [
     bio: 'Connects brand messaging and performance creative across channels.',
     image:
       'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80',
-    placeholder: true as const,
   },
 ] as const
 

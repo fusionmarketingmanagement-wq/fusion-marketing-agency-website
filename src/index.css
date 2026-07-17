@@ -169,7 +169,6 @@ h6 {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
 }
 
@@ -259,4 +258,19 @@ img {
 
 .skip-link:focus {
   top: 1rem;
+}
+
+.site-header {
+  min-height: 76px;
+  height: 76px;
+}
+
+.header-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 280px;
+  max-height: 56px;
+  object-fit: contain;
+  object-position: left center;
 }

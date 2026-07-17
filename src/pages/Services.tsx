@@ -77,7 +77,7 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <div className="sticky top-[84px] z-30 border-y border-border bg-surface-elevated/95 backdrop-blur-xl">
+      <div className="sticky top-[76px] z-30 border-y border-border bg-surface-elevated/95 backdrop-blur-xl">
         <div className="container-shell flex gap-2 overflow-x-auto py-3">
           {services.map((service) => (
             <a
@@ -146,14 +146,19 @@ export function ServicesPage() {
       <section className="border-y border-border bg-background-soft py-20">
         <div className="container-shell">
           <SectionHeading align="center" eyebrow="Process" title="How engagements move" className="mb-10" />
-          <div className="grid gap-4 md:grid-cols-4">
+          <div className="grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
-              <div key={step.step} className="rounded-3xl border border-border bg-surface p-5">
-                <p className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-charcoal font-mono text-xs text-text-inverse">
+              <div
+                key={step.step}
+                className="flex h-full min-h-[240px] flex-col rounded-3xl border border-border bg-surface p-6 shadow-[var(--shadow-sm)]"
+              >
+                <p className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-charcoal font-mono text-xs text-white">
                   {step.step}
                 </p>
-                <h3 className="mt-3 font-display text-xl">{step.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
+                <h3 className="mt-5 font-display text-xl text-foreground">{step.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  {step.description}
+                </p>
               </div>
             ))}
           </div>

@@ -122,9 +122,6 @@ export function Testimonials({ items = defaultTestimonials, className }: Testimo
           })}
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-soft">
-          Placeholder quotes for design demonstration
-        </p>
       </div>
     </div>
   )

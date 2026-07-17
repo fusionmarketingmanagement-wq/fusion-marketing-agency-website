@@ -44,7 +44,7 @@ const faq = [
   {
     id: 'whatsapp',
     question: 'Can I reach you on WhatsApp?',
-    answer: 'Yes. Use the WhatsApp button for faster mobile outreach. Numbers shown are placeholders until replaced.',
+    answer: 'Yes. Use the WhatsApp button for faster mobile outreach — we typically reply during business hours.',
   },
 ]
 
@@ -255,8 +255,7 @@ export function ContactPage() {
                   <li>
                     <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-ink">
                       {siteConfig.phone}
-                    </a>{' '}
-                    <span className="font-mono text-[10px] uppercase tracking-[0.14em]">Placeholder</span>
+                    </a>
                   </li>
                   <li>
                     {siteConfig.hours.weekdays}
@@ -275,7 +274,7 @@ export function ContactPage() {
                 <div className="relative aspect-[16/11]">
                   <img
                     src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"
-                    alt="Map placeholder showing Dubai skyline near Business Bay"
+                    alt="Dubai skyline near Business Bay"
                     width={1200}
                     height={825}
                     loading="lazy"
@@ -283,10 +282,8 @@ export function ContactPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-surface-elevated p-4 shadow-[var(--shadow-sm)] backdrop-blur">
-                    <p className="font-display text-sm">Map placeholder</p>
-                    <p className="mt-1 text-xs text-muted-foreground">
-                      Replace with Google Maps embed when production-ready.
-                    </p>
+                    <p className="font-display text-sm">{siteConfig.address.line1}</p>
+                    <p className="mt-1 text-xs text-muted-foreground">{siteConfig.address.line2}</p>
                   </div>
                 </div>
               </div>
