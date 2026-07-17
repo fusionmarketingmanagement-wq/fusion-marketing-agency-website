@@ -24,12 +24,15 @@ export function Accordion({ items, className }: AccordionProps) {
         return (
           <div
             key={item.id}
-            className="overflow-hidden rounded-2xl border border-border bg-surface"
+            className={cn(
+              'overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-sm)]',
+              open && 'border-[rgba(17,17,17,0.24)] bg-[#f7f7f6]',
+            )}
           >
             <h3>
               <button
                 type="button"
-                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-medium text-foreground"
+                className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-base font-medium text-foreground hover:text-ink"
                 aria-expanded={open}
                 aria-controls={`panel-${item.id}`}
                 id={`accordion-${item.id}`}
@@ -79,7 +82,7 @@ export function MetricCard({ value, label, note, className }: MetricCardProps) {
   return (
     <div
       className={cn(
-        'rounded-2xl border border-border bg-surface/80 p-6',
+        'rounded-2xl border border-border bg-surface p-6 shadow-[var(--shadow-sm)]',
         className,
       )}
     >
@@ -88,7 +91,7 @@ export function MetricCard({ value, label, note, className }: MetricCardProps) {
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{label}</p>
       {note ? (
-        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground/70">
+        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.16em] text-text-soft">
           {note}
         </p>
       ) : null}

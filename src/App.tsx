@@ -21,7 +21,7 @@ const ContactPage = lazy(() =>
 function RouteFallback() {
   return (
     <div className="flex min-h-[50vh] items-center justify-center pt-28">
-      <div className="h-10 w-10 animate-pulse rounded-full border border-accent/40 bg-accent/20" />
+      <div className="h-10 w-10 animate-pulse rounded-full border border-border bg-accent-muted" />
     </div>
   )
 }

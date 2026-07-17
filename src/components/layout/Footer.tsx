@@ -7,14 +7,14 @@ export function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-border bg-background-secondary">
+    <footer className="border-t border-border bg-background-soft">
       <div className="container-shell grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <Link to="/" className="inline-flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground font-display text-sm font-bold text-background">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-charcoal font-display text-sm font-bold text-text-inverse shadow-[var(--shadow-sm)]">
               F
             </span>
-            <span className="font-display text-sm font-semibold">{siteConfig.name}</span>
+            <span className="font-display text-sm font-semibold text-foreground">{siteConfig.name}</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Paid media, AI automation, social strategy and high-performance web — fused into measurable growth for Dubai businesses.
@@ -26,7 +26,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <Link to={link.href} className="text-sm text-foreground/85 hover:text-accent">
+                <Link to={link.href} className="text-sm text-graphite hover:text-ink">
                   {link.label}
                 </Link>
               </li>
@@ -39,7 +39,7 @@ export function Footer() {
           <ul className="mt-4 space-y-2">
             {services.slice(0, 6).map((service) => (
               <li key={service.id}>
-                <Link to={`/services#${service.id}`} className="text-sm text-foreground/85 hover:text-accent">
+                <Link to={`/services#${service.id}`} className="text-sm text-graphite hover:text-ink">
                   {service.title}
                 </Link>
               </li>
@@ -51,12 +51,12 @@ export function Footer() {
           <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Contact</p>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-accent">
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-ink">
                 {siteConfig.email}
               </a>
             </li>
             <li>
-              <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-accent">
+              <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-ink">
                 {siteConfig.phone}
               </a>
               <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground/70">
@@ -75,7 +75,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground hover:border-accent/40"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-[var(--shadow-sm)] hover:border-border-dark hover:bg-accent-soft"
             >
               <Instagram className="h-4 w-4" />
             </a>
@@ -84,7 +84,7 @@ export function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground hover:border-accent/40"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-[var(--shadow-sm)] hover:border-border-dark hover:bg-accent-soft"
             >
               <Facebook className="h-4 w-4" />
             </a>
@@ -92,7 +92,7 @@ export function Footer() {
               href={siteConfig.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 items-center rounded-full border border-border bg-surface px-4 text-sm hover:border-accent/40"
+              className="inline-flex h-10 items-center rounded-full border border-border bg-surface px-4 text-sm shadow-[var(--shadow-sm)] hover:border-border-dark hover:bg-accent-soft"
             >
               WhatsApp
             </a>

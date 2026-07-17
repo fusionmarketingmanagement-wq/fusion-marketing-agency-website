@@ -77,13 +77,13 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <div className="sticky top-[84px] z-30 border-y border-border bg-background/90 backdrop-blur-xl">
+      <div className="sticky top-[84px] z-30 border-y border-border bg-surface-elevated/95 backdrop-blur-xl">
         <div className="container-shell flex gap-2 overflow-x-auto py-3">
           {services.map((service) => (
             <a
               key={service.id}
               href={`#${service.id}`}
-              className="whitespace-nowrap rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted-foreground hover:border-accent/40 hover:text-foreground"
+              className="whitespace-nowrap rounded-full border border-border bg-surface px-4 py-2 text-sm text-muted-foreground shadow-[var(--shadow-sm)] hover:border-border-dark hover:bg-accent-soft hover:text-ink"
             >
               {service.title}
             </a>
@@ -99,10 +99,10 @@ export function ServicesPage() {
               <Reveal key={service.id}>
                 <article
                   id={service.id}
-                  className="scroll-mt-36 grid gap-8 rounded-[2rem] border border-border bg-surface p-6 md:grid-cols-[0.9fr_1.1fr] md:p-10"
+                  className="scroll-mt-36 grid gap-8 rounded-[2rem] border border-border bg-surface p-6 shadow-[var(--shadow-md)] md:grid-cols-[0.9fr_1.1fr] md:p-10"
                 >
                   <div>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-background text-accent">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#dde1e7] bg-[#eef0f3] text-charcoal">
                       <Icon className="h-5 w-5" />
                     </div>
                     <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
@@ -115,15 +115,15 @@ export function ServicesPage() {
                     </Button>
                   </div>
                   <div className="grid gap-4">
-                    <div className="rounded-2xl border border-border bg-background-secondary/70 p-5">
+                    <div className="rounded-2xl border border-border bg-background-soft p-5">
                       <h3 className="font-display text-lg">Business problem</h3>
                       <p className="mt-2 text-sm text-muted-foreground">{service.problem}</p>
                     </div>
-                    <div className="rounded-2xl border border-border bg-background-secondary/70 p-5">
+                    <div className="rounded-2xl border border-border bg-background-soft p-5">
                       <h3 className="font-display text-lg">Solution</h3>
                       <p className="mt-2 text-sm text-muted-foreground">{service.solution}</p>
                     </div>
-                    <div className="rounded-2xl border border-border bg-background-secondary/70 p-5">
+                    <div className="rounded-2xl border border-border bg-background-soft p-5">
                       <h3 className="font-display text-lg">Deliverables</h3>
                       <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                         {service.deliverables.map((item) => (
@@ -131,7 +131,7 @@ export function ServicesPage() {
                         ))}
                       </ul>
                     </div>
-                    <div className="rounded-2xl border border-accent/25 bg-accent/10 p-5">
+                    <div className="rounded-2xl border border-[#d9dde3] bg-[#f1f2f4] p-5">
                       <h3 className="font-display text-lg">Expected business impact</h3>
                       <p className="mt-2 text-sm text-foreground/90">{service.impact}</p>
                     </div>
@@ -143,13 +143,15 @@ export function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-background-secondary py-20">
+      <section className="border-y border-border bg-background-soft py-20">
         <div className="container-shell">
           <SectionHeading align="center" eyebrow="Process" title="How engagements move" className="mb-10" />
           <div className="grid gap-4 md:grid-cols-4">
             {processSteps.map((step) => (
               <div key={step.step} className="rounded-3xl border border-border bg-surface p-5">
-                <p className="font-mono text-xs text-accent">{step.step}</p>
+                <p className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-charcoal font-mono text-xs text-text-inverse">
+                  {step.step}
+                </p>
                 <h3 className="mt-3 font-display text-xl">{step.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground">{step.description}</p>
               </div>
@@ -167,7 +169,7 @@ export function ServicesPage() {
 
       <section className="pb-24">
         <div className="container-shell">
-          <div className="rounded-[2rem] border border-border bg-surface px-6 py-12 text-center">
+          <div className="rounded-[2rem] border border-border bg-surface px-6 py-12 text-center shadow-[var(--shadow-md)]">
             <h2 className="text-3xl">Ready to map the right service mix?</h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
               Book a free strategy call and we&apos;ll recommend the system — not a random channel list.

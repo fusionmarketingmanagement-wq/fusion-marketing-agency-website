@@ -27,7 +27,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-background-secondary py-20">
+      <section className="border-y border-border bg-background-soft py-20">
         <div className="container-shell grid gap-10 lg:grid-cols-2">
           <Reveal>
             <SectionHeading
@@ -39,8 +39,8 @@ export function AboutPage() {
           <div className="space-y-4">
             {timeline.map((item, index) => (
               <Reveal key={item.year} delay={index * 0.06}>
-                <div className="rounded-2xl border border-border bg-surface p-5">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
+                <div className="rounded-2xl border border-border bg-surface p-5 shadow-[var(--shadow-sm)]">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
                     {item.year} — {item.title}
                   </p>
                   <p className="mt-2 text-sm text-muted-foreground">{item.description}</p>
@@ -71,8 +71,8 @@ export function AboutPage() {
             },
           ].map((item) => (
             <Reveal key={item.label}>
-              <div className="h-full rounded-3xl border border-border bg-surface p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-accent">{item.label}</p>
+              <div className="h-full rounded-3xl border border-border bg-surface p-6 shadow-[var(--shadow-sm)]">
+                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">{item.label}</p>
                 <h3 className="mt-4 font-display text-xl">{item.title}</h3>
                 <p className="mt-3 text-sm text-muted-foreground">{item.body}</p>
               </div>
@@ -81,13 +81,13 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-background-secondary py-20 md:py-28">
+      <section className="bg-background-soft py-20 md:py-28">
         <div className="container-shell grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <div className="relative mx-auto aspect-square w-full max-w-md">
               <div className="absolute inset-0 rounded-full border border-border/70" />
-              <div className="absolute inset-8 rounded-full border border-accent/25" />
-              <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-accent/40 bg-accent/15 text-center shadow-[0_0_40px_rgba(108,124,255,0.25)]">
+              <div className="absolute inset-8 rounded-full border border-border-dark" />
+              <div className="absolute left-1/2 top-1/2 z-10 flex h-28 w-28 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-charcoal text-center text-text-inverse shadow-[var(--shadow-md)]">
                 <span className="font-display text-sm font-semibold leading-tight">
                   Growth
                   <br />
@@ -102,7 +102,7 @@ export function AboutPage() {
                 return (
                   <div
                     key={pillar}
-                    className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-border bg-surface px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground shadow-lg"
+                    className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full border border-border bg-surface px-3 py-2 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground shadow-[var(--shadow-md)]"
                     style={{ left: `${x}%`, top: `${y}%` }}
                   >
                     {pillar}
@@ -164,7 +164,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-background-secondary py-20 md:py-28">
+      <section className="border-y border-border bg-background-soft py-20 md:py-28">
         <div className="container-shell">
           <Reveal>
             <SectionHeading
@@ -178,7 +178,7 @@ export function AboutPage() {
           <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {team.map((member) => (
               <StaggerItem key={member.name}>
-                <article className="overflow-hidden rounded-3xl border border-border bg-surface">
+                <article className="overflow-hidden rounded-3xl border border-border bg-surface shadow-[var(--shadow-sm)]">
                   <img
                     src={member.image}
                     alt=""
@@ -189,7 +189,7 @@ export function AboutPage() {
                   />
                   <div className="p-5">
                     <h3 className="font-display text-lg">{member.name}</h3>
-                    <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-accent">
+                    <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.16em] text-text-muted">
                       {member.role}
                     </p>
                     <p className="mt-3 text-sm text-muted-foreground">{member.bio}</p>
@@ -204,7 +204,7 @@ export function AboutPage() {
       <section className="py-20 md:py-28">
         <div className="container-shell">
           <Reveal>
-            <div className="rounded-[2rem] border border-border bg-surface px-6 py-12 text-center md:px-12">
+            <div className="rounded-[2rem] border border-border bg-surface px-6 py-12 text-center shadow-[var(--shadow-md)] md:px-12">
               <h2 className="text-[clamp(1.8rem,3.5vw,2.75rem)]">Start the conversation</h2>
               <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
                 Tell us where growth is stalling. We&apos;ll show you a clearer system.

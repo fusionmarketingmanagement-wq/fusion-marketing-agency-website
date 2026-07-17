@@ -15,7 +15,7 @@ export function CaseStudyCard({ study, className, featured }: CaseStudyCardProps
     <motion.article
       layout
       className={cn(
-        'group overflow-hidden rounded-3xl border border-border bg-surface',
+        'group overflow-hidden rounded-3xl border border-border bg-surface shadow-[var(--shadow-sm)]',
         featured && 'md:col-span-2',
         className,
       )}
@@ -32,11 +32,11 @@ export function CaseStudyCard({ study, className, featured }: CaseStudyCardProps
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
           <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-            <span className="rounded-full border border-white/15 bg-black/40 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-foreground backdrop-blur">
+            <span className="rounded-full border border-white/30 bg-white/90 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-foreground shadow-[var(--shadow-sm)] backdrop-blur">
               {study.industry}
             </span>
             {study.placeholder ? (
-              <span className="rounded-full border border-accent/30 bg-accent/15 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-accent backdrop-blur">
+              <span className="rounded-full border border-border bg-accent-soft px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-graphite backdrop-blur">
                 Sample
               </span>
             ) : null}
@@ -44,18 +44,18 @@ export function CaseStudyCard({ study, className, featured }: CaseStudyCardProps
         </div>
         <div className="flex flex-col justify-between p-6">
           <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted-foreground">
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-text-muted">
               {study.campaignType}
             </p>
             <h3 className="mt-3 font-display text-xl text-foreground md:text-2xl">{study.title}</h3>
             <p className="mt-3 text-sm text-muted-foreground">{study.summary}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl border border-border bg-background-secondary/80 p-4">
-                <p className="text-xs text-muted-foreground">Challenge</p>
+              <div className="rounded-2xl border border-border bg-background-soft p-4">
+                <p className="text-xs text-text-muted">Challenge</p>
                 <p className="mt-1 text-sm text-foreground/90">{study.challenge}</p>
               </div>
-              <div className="rounded-2xl border border-border bg-background-secondary/80 p-4">
-                <p className="text-xs text-muted-foreground">Approach</p>
+              <div className="rounded-2xl border border-border bg-background-soft p-4">
+                <p className="text-xs text-text-muted">Approach</p>
                 <p className="mt-1 text-sm text-foreground/90">{study.approach}</p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export function CaseStudyCard({ study, className, featured }: CaseStudyCardProps
             </div>
             <Link
               to="/case-studies"
-              className="inline-flex items-center gap-2 text-sm font-medium text-accent"
+              className="inline-flex items-center gap-2 text-sm font-medium text-graphite hover:text-ink"
             >
               View details
               <ArrowUpRight className="h-4 w-4" />

@@ -79,7 +79,7 @@ export function Testimonials({ items = defaultTestimonials, className }: Testimo
                 className={cn(
                   "relative flex cursor-pointer items-center gap-0 rounded-full",
                   "transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
-                  isActive ? "bg-foreground shadow-lg" : "bg-transparent hover:bg-muted/80",
+                  isActive ? "bg-foreground shadow-[var(--shadow-md)]" : "bg-transparent hover:bg-background-muted",
                   showName ? "px-4 py-2 pl-2" : "p-0.5",
                 )}
               >
@@ -93,7 +93,7 @@ export function Testimonials({ items = defaultTestimonials, className }: Testimo
                     className={cn(
                       "h-8 w-8 rounded-full object-cover",
                       "transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
-                      isActive ? "ring-2 ring-background/30" : "ring-0",
+                      isActive ? "ring-2 ring-white/50" : "ring-0",
                       !isActive && "hover:scale-105",
                     )}
                   />
@@ -110,7 +110,7 @@ export function Testimonials({ items = defaultTestimonials, className }: Testimo
                       className={cn(
                         "block whitespace-nowrap text-sm font-medium",
                         "transition-colors duration-300",
-                        isActive ? "text-background" : "text-foreground",
+                        isActive ? "text-surface" : "text-foreground",
                       )}
                     >
                       {testimonial.author}
@@ -122,7 +122,7 @@ export function Testimonials({ items = defaultTestimonials, className }: Testimo
           })}
         </div>
 
-        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground/70">
+        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-text-soft">
           Placeholder quotes for design demonstration
         </p>
       </div>

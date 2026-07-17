@@ -9,7 +9,7 @@ function CoreScene({ simplified }: { simplified: boolean }) {
     <>
       <ambientLight intensity={0.35} />
       <directionalLight position={[4, 6, 2]} intensity={1.2} color="#9aa6ff" />
-      <pointLight position={[-3, -2, -2]} intensity={0.8} color="#8b5cf6" />
+      <pointLight position={[-3, -2, -2]} intensity={0.65} color="#c5c8d8" />
 
       <Float speed={simplified ? 0.6 : 1.2} rotationIntensity={simplified ? 0.15 : 0.35} floatIntensity={0.6}>
         <Sphere args={[1.05, simplified ? 32 : 64, simplified ? 32 : 64]}>
@@ -35,7 +35,7 @@ function CoreScene({ simplified }: { simplified: boolean }) {
           <Float speed={1.1} floatIntensity={0.5}>
             <mesh position={[-1.6, -0.5, 0.6]}>
               <icosahedronGeometry args={[0.35, 0]} />
-              <meshStandardMaterial color="#8b5cf6" metalness={0.6} roughness={0.25} transparent opacity={0.9} />
+              <meshStandardMaterial color="#8a8f9c" metalness={0.7} roughness={0.3} transparent opacity={0.9} />
             </mesh>
           </Float>
           <Float speed={1.4} floatIntensity={0.7}>
@@ -66,7 +66,7 @@ export function GrowthEngineScene() {
         className="relative aspect-square w-full max-w-lg overflow-hidden rounded-[2rem] border border-border bg-surface"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(108,124,255,0.35),transparent_60%)]" />
-        <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/30 blur-2xl" />
+        <div className="absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#6c7cff]/30 blur-2xl" />
       </div>
     )
   }
@@ -74,7 +74,7 @@ export function GrowthEngineScene() {
   return (
     <div className="relative aspect-square w-full max-w-lg">
       <div
-        className="absolute inset-0 rounded-[2rem] border border-border bg-surface/60 shadow-[0_30px_80px_rgba(0,0,0,0.45)]"
+        className="absolute inset-0 rounded-[2rem] border border-border bg-surface shadow-[var(--shadow-lg)]"
         aria-hidden
       >
         <Suspense fallback={<div className="h-full w-full animate-pulse bg-surface-light" />}>
@@ -101,7 +101,7 @@ export function GrowthEngineScene() {
             return (
               <div
                 key={label}
-                className={`pointer-events-none absolute ${positions[index]} rounded-full border border-border bg-background/70 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground backdrop-blur`}
+                className={`pointer-events-none absolute ${positions[index]} rounded-full border border-border bg-surface-elevated px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground shadow-[var(--shadow-sm)] backdrop-blur`}
               >
                 {label}
               </div>
@@ -109,7 +109,7 @@ export function GrowthEngineScene() {
           })
         : null}
 
-      <div className="pointer-events-none absolute -bottom-3 left-6 rounded-2xl border border-border bg-background/80 px-4 py-3 backdrop-blur md:left-8">
+      <div className="pointer-events-none absolute -bottom-3 left-6 rounded-2xl border border-border bg-surface px-4 py-3 shadow-[var(--shadow-md)] backdrop-blur md:left-8">
         <p className="font-display text-lg text-foreground">Growth Engine</p>
         <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
           Channels fused into one system

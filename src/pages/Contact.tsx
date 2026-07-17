@@ -95,10 +95,10 @@ export function ContactPage() {
 
   const fieldClass = (key: keyof FormState) =>
     cn(
-      'w-full rounded-2xl border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60',
+      'w-full rounded-2xl border bg-background-soft px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-text-soft',
       errors[key]
         ? 'border-destructive focus:border-destructive'
-        : 'border-border focus:border-accent/60',
+        : 'border-border focus:border-charcoal focus:bg-surface focus:shadow-[0_0_0_4px_var(--focus-ring)]',
     )
 
   return (
@@ -127,7 +127,7 @@ export function ContactPage() {
             <form
               onSubmit={onSubmit}
               noValidate
-              className="rounded-[2rem] border border-border bg-surface p-6 md:p-8"
+              className="rounded-[2rem] border border-border bg-surface p-6 shadow-[var(--shadow-md)] md:p-8"
             >
               <div className="grid gap-4 md:grid-cols-2">
                 <label className="block text-sm">
@@ -226,7 +226,7 @@ export function ContactPage() {
               </div>
 
               {status === 'success' ? (
-                <p className="mt-4 rounded-2xl border border-success/30 bg-success/10 px-4 py-3 text-sm text-success" role="status">
+                <p className="mt-4 rounded-2xl border border-success/25 bg-success-soft px-4 py-3 text-sm text-success" role="status">
                   Demo success: your message was validated locally. No data was sent to a live backend unless an endpoint is configured.
                 </p>
               ) : null}
@@ -240,7 +240,7 @@ export function ContactPage() {
 
           <div className="space-y-4">
             <Reveal>
-              <div className="rounded-3xl border border-border bg-surface p-6">
+              <div className="rounded-3xl border border-border bg-surface p-6 shadow-[var(--shadow-sm)]">
                 <h2 className="font-display text-xl">Business details</h2>
                 <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
                   <li>
@@ -248,12 +248,12 @@ export function ContactPage() {
                     {siteConfig.address.line2}
                   </li>
                   <li>
-                    <a href={`mailto:${siteConfig.email}`} className="hover:text-accent">
+                    <a href={`mailto:${siteConfig.email}`} className="hover:text-ink">
                       {siteConfig.email}
                     </a>
                   </li>
                   <li>
-                    <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-accent">
+                    <a href={`tel:${siteConfig.phoneTel}`} className="hover:text-ink">
                       {siteConfig.phone}
                     </a>{' '}
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em]">Placeholder</span>
@@ -271,7 +271,7 @@ export function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.08}>
-              <div className="overflow-hidden rounded-3xl border border-border bg-surface">
+              <div className="overflow-hidden rounded-3xl border border-border bg-surface shadow-[var(--shadow-sm)]">
                 <div className="relative aspect-[16/11]">
                   <img
                     src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=80"
@@ -282,7 +282,7 @@ export function ContactPage() {
                     className="h-full w-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-background/80 p-4 backdrop-blur">
+                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-border bg-surface-elevated p-4 shadow-[var(--shadow-sm)] backdrop-blur">
                     <p className="font-display text-sm">Map placeholder</p>
                     <p className="mt-1 text-xs text-muted-foreground">
                       Replace with Google Maps embed when production-ready.
@@ -295,7 +295,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="border-t border-border bg-background-secondary py-20">
+      <section className="border-t border-border bg-background-soft py-20">
         <div className="container-shell grid gap-10 lg:grid-cols-2">
           <SectionHeading eyebrow="FAQ" title="Contact FAQ" />
           <Accordion items={faq} />

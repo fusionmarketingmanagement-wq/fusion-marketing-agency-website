@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[rgba(17,17,17,0.38)] disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         primary:
-          'bg-accent text-primary-foreground shadow-[0_0_24px_rgba(108,124,255,0.28)] hover:bg-[#7b89ff] hover:shadow-[0_0_32px_rgba(108,124,255,0.4)]',
+          'border border-charcoal bg-charcoal text-text-inverse shadow-[0_8px_22px_rgba(17,17,17,0.18)] hover:-translate-y-0.5 hover:border-charcoal-hover hover:bg-charcoal-hover hover:shadow-[0_12px_28px_rgba(17,17,17,0.23)] active:translate-y-0 active:shadow-[0_5px_14px_rgba(17,17,17,0.16)]',
         secondary:
-          'border border-border bg-surface-light/60 text-foreground hover:border-white/20 hover:bg-surface-light',
-        ghost: 'text-foreground hover:bg-white/5',
+          'border border-border-strong bg-surface text-ink shadow-[var(--shadow-sm)] hover:border-[rgba(17,17,17,0.25)] hover:bg-accent-soft',
+        ghost: 'text-foreground hover:bg-accent-soft',
         outline:
-          'border border-white/15 bg-transparent text-foreground hover:border-accent/50 hover:bg-accent/10',
+          'border border-border-strong bg-surface text-ink shadow-[var(--shadow-sm)] hover:border-[rgba(17,17,17,0.25)] hover:bg-accent-soft',
       },
       size: {
         sm: 'h-10 px-4 text-sm',

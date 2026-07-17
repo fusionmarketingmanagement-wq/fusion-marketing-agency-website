@@ -54,7 +54,7 @@ export function CaseStudiesPage() {
                   {filter === item ? (
                     <motion.span
                       layoutId="case-filter"
-                      className="absolute inset-0 rounded-full border border-accent/40 bg-accent/15"
+                      className="absolute inset-0 rounded-full border border-border bg-[#eceef1]"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   ) : null}
@@ -76,7 +76,7 @@ export function CaseStudiesPage() {
         </div>
       </section>
 
-      <section className="border-y border-border bg-background-secondary py-20">
+      <section className="border-y border-border bg-background-soft py-20">
         <div className="container-shell">
           <SectionHeading
             align="center"
@@ -100,7 +100,7 @@ export function CaseStudiesPage() {
 
       <section className="py-20">
         <div className="container-shell">
-          <div className="rounded-[2rem] border border-border bg-surface px-6 py-12 text-center">
+          <div className="rounded-[2rem] border border-border bg-surface px-6 py-12 text-center shadow-[var(--shadow-md)]">
             <h2 className="text-3xl">Want a growth system built around your numbers?</h2>
             <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
               Share your funnel and we&apos;ll outline where to audit first.

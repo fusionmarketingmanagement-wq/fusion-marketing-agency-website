@@ -30,17 +30,19 @@ export function Header() {
         className={cn(
           'container-shell flex h-16 items-center justify-between rounded-2xl border border-transparent px-4 transition-all duration-300 md:h-[68px] md:px-5',
           scrolled || open
-            ? 'border-border bg-background/75 shadow-[0_10px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl'
+            ? 'border-border bg-surface-elevated shadow-[var(--shadow-md)] backdrop-blur-xl'
             : 'bg-transparent',
         )}
       >
         <Link to="/" className="flex items-center gap-3" aria-label={`${siteConfig.name} home`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-foreground font-display text-sm font-bold text-background">
+          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-charcoal font-display text-sm font-bold text-text-inverse shadow-[var(--shadow-sm)]">
             F
           </span>
           <span className="hidden leading-tight sm:block">
-            <span className="block font-display text-sm font-semibold">Fusion Marketing</span>
-            <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-muted-foreground">
+            <span className="block font-display text-sm font-semibold text-foreground">
+              Fusion Marketing
+            </span>
+            <span className="block font-mono text-[10px] uppercase tracking-[0.16em] text-text-muted">
               Management · Dubai
             </span>
           </span>
@@ -54,7 +56,7 @@ export function Header() {
               className={({ isActive }) =>
                 cn(
                   'rounded-full px-3.5 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground',
-                  isActive && 'bg-white/5 text-foreground',
+                  isActive && 'bg-[#eceef1] text-ink',
                 )
               }
             >
@@ -71,7 +73,7 @@ export function Header() {
 
         <button
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface text-foreground lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border bg-surface text-foreground shadow-[var(--shadow-sm)] lg:hidden"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -83,7 +85,7 @@ export function Header() {
       <AnimatePresence>
         {open ? (
           <motion.div
-            className="container-shell mt-2 overflow-hidden rounded-3xl border border-border bg-background/95 backdrop-blur-xl lg:hidden"
+            className="container-shell mt-2 overflow-hidden rounded-3xl border border-border bg-surface-elevated shadow-[var(--shadow-lg)] backdrop-blur-xl lg:hidden"
             initial={{ opacity: 0, y: -8, height: 0 }}
             animate={{ opacity: 1, y: 0, height: 'auto' }}
             exit={{ opacity: 0, y: -8, height: 0 }}
@@ -98,7 +100,7 @@ export function Header() {
                   className={({ isActive }) =>
                     cn(
                       'rounded-2xl px-4 py-3 text-base text-muted-foreground',
-                      isActive && 'bg-surface text-foreground',
+                      isActive && 'bg-[#eceef1] text-ink',
                     )
                   }
                 >
