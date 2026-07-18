@@ -6,6 +6,7 @@ import { Accordion } from '@/components/ui/Accordion'
 import { Reveal } from '@/components/motion/Reveal'
 import { siteConfig } from '@/data/site'
 import { services } from '@/data/services'
+import { isSupabaseConfigured, supabase } from '@/lib/supabase'
 import { cn } from '@/lib/utils'
 
 type FormState = {
@@ -13,6 +14,7 @@ type FormState = {
   businessName: string
   email: string
   phone: string
+  websiteUrl: string
   service: string
   budget: string
   message: string
@@ -25,6 +27,7 @@ const initialForm: FormState = {
   businessName: '',
   email: '',
   phone: '',
+  websiteUrl: '',
   service: '',
   budget: '',
   message: '',
@@ -60,6 +63,16 @@ export function ContactPage() {
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       next.email = 'Enter a valid email'
     }
+    if (form.websiteUrl.trim()) {
+      try {
+        const url = new URL(form.websiteUrl.trim())
+        if (!['http:', 'https:'].includes(url.protocol)) {
+          next.websiteUrl = 'Enter a valid website URL'
+        }
+      } catch {
+        next.websiteUrl = 'Enter a full URL, for example https://example.com'
+      }
+    }
     if (!form.service) next.service = 'Select a service'
     if (!form.message.trim()) next.message = 'Message is required'
     setErrors(next)
@@ -72,20 +85,23 @@ export function ContactPage() {
 
     setStatus('submitting')
 
-    // Demo handler — replace with your form endpoint when ready.
-    const endpoint = import.meta.env.VITE_FORM_ENDPOINT as string | undefined
-
     try {
-      if (endpoint) {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(form),
-        })
-        if (!response.ok) throw new Error('Request failed')
-      } else {
-        await new Promise((resolve) => setTimeout(resolve, 700))
-      }
+      if (!isSupabaseConfigured || !supabase) throw new Error('Supabase is not configured')
+
+      const { error } = await supabase.from('leads').insert({
+        full_name: form.fullName.trim(),
+        business_name: form.businessName.trim(),
+        email: form.email.trim().toLowerCase(),
+        phone: form.phone.trim() || null,
+        website_url: form.websiteUrl.trim() || null,
+        service: form.service,
+        budget: form.budget || null,
+        message: form.message.trim(),
+        source: 'website_contact_form',
+      })
+
+      if (error) throw error
+
       setStatus('success')
       setForm(initialForm)
     } catch {
@@ -115,7 +131,7 @@ export function ContactPage() {
             <SectionHeading
               eyebrow="Contact"
               title="Let’s map your free growth plan."
-              description="Share a few details and we’ll follow up with clear next steps. Form submissions are demo-mode until a backend endpoint is configured."
+              description="Share a few details and we’ll follow up with clear next steps."
             />
           </Reveal>
         </div>
@@ -173,6 +189,23 @@ export function ContactPage() {
                     autoComplete="tel"
                   />
                 </label>
+                <label className="block text-sm md:col-span-2">
+                  <span className="mb-2 block text-muted-foreground">
+                    Your website URL <span className="text-text-muted">(optional)</span>
+                  </span>
+                  <input
+                    type="url"
+                    className={fieldClass('websiteUrl')}
+                    value={form.websiteUrl}
+                    onChange={(e) => setForm((f) => ({ ...f, websiteUrl: e.target.value }))}
+                    autoComplete="url"
+                    inputMode="url"
+                    placeholder="https://example.com"
+                  />
+                  {errors.websiteUrl ? (
+                    <span className="mt-1 block text-xs text-destructive">{errors.websiteUrl}</span>
+                  ) : null}
+                </label>
                 <label className="block text-sm">
                   <span className="mb-2 block text-muted-foreground">Required service</span>
                   <select
@@ -219,20 +252,17 @@ export function ContactPage() {
                 <Button type="submit" size="lg" disabled={status === 'submitting'}>
                   {status === 'submitting' ? 'Sending…' : 'Send message'}
                 </Button>
-                <p className="text-xs text-muted-foreground">
-                  Demo handler active
-                  {import.meta.env.VITE_FORM_ENDPOINT ? ' · endpoint configured' : ' · set VITE_FORM_ENDPOINT to connect'}
-                </p>
+                <p className="text-xs text-muted-foreground">Your details are kept private.</p>
               </div>
 
               {status === 'success' ? (
                 <p className="mt-4 rounded-2xl border border-success/25 bg-success-soft px-4 py-3 text-sm text-success" role="status">
-                  Demo success: your message was validated locally. No data was sent to a live backend unless an endpoint is configured.
+                  Thank you. Your message has been received and we’ll get back to you shortly.
                 </p>
               ) : null}
               {status === 'error' ? (
                 <p className="mt-4 rounded-2xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive" role="alert">
-                  Something went wrong submitting to the configured endpoint. Please try again or email us directly.
+                  Something went wrong. Please try again or email us directly.
                 </p>
               ) : null}
             </form>
